@@ -22,4 +22,14 @@ router.post("/register", (req, res) => {
   });
 });
 
+/* User login route */
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/profile",
+    failureRedirect: "/",
+  }),
+  (req, res) => {}
+);
+
 module.exports = router;
