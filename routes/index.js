@@ -32,4 +32,10 @@ router.post(
   (req, res) => {}
 );
 
+/* middleware to check if user loggedIn or not */
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()) return next();
+  res.redirect('/');
+}
+
 module.exports = router;
