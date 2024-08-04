@@ -11,6 +11,12 @@ router.get("/", function (req, res, next) {
   res.render("index");
 });
 
+/* Login page route */
+router.get('/login', (req, res, next)=>{
+  res.render('login');
+})
+
+
 /* User profile route */
 router.get("/profile", isLoggedIn, (req, res, next) => {
   res.send("profile page");
