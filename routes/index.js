@@ -23,7 +23,7 @@ router.get('/feed', (req, res, next)=>{
 
 /* User profile route */
 router.get("/profile", isLoggedIn, (req, res, next) => {
-  res.send("profile page");
+  res.render("profile");
 });
 
 /* User register route */
@@ -44,7 +44,7 @@ router.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/profile",
-    failureRedirect: "/",
+    failureRedirect: "/login",
   }),
   (req, res) => {}
 );
@@ -60,7 +60,7 @@ router.get('/logout', (req, res)=>{
 /* middleware to check if user loggedIn or not */
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
-  res.redirect("/");
+  res.redirect("/login");
 }
 
 module.exports = router;
