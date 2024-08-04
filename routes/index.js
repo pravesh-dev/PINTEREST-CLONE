@@ -14,8 +14,12 @@ router.get("/", function (req, res, next) {
 /* Login page route */
 router.get('/login', (req, res, next)=>{
   res.render('login');
-})
+});
 
+/* Feed page route */
+router.get('/feed', (req, res, next)=>{
+  res.render('feed');
+});
 
 /* User profile route */
 router.get("/profile", isLoggedIn, (req, res, next) => {
