@@ -11,6 +11,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* User profile route */
+router.get('/profile', isLoggedIn, (req, res)=>{
+  res.send('profile page')
+})
+
 /* User register route */
 router.post("/register", (req, res) => {
   const { fullName, email, userName } = req.body;
