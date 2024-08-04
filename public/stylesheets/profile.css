@@ -1,17 +1,17 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #dadada;
     margin: 0;
     padding: 0;
   }
   
-  .container {
-    max-width: 500px;
+  .profileContainer {
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
   }
   
-  .card {
+  .profileCard {
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
