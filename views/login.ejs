@@ -17,36 +17,19 @@
         />
         <p class="header">Login to your account</p>
 
-        <form action="/register" method="post">
-          <input type="email" name="email" placeholder="Email" class="detail" /><br />
+        <form action="/login" method="post">
           <input type="text" name="username" placeholder="Username" class="detail" /><br />
-          <input type="text" name="fullName" placeholder="Full Name" class="detail" /><br />
           <input type="password" name="password" placeholder="Password" class="detail" />
-          <input type="submit" class="btn int" value="Register Account" />
+          <input type="submit" class="btn int" value="Login Account" />
         </form>
-        <p class="or">OR</p>
-        <button class="btn fbk">
-          <i
-            class="fab fa-facebook fa-lg"
-            style="color: white; padding-right: 10px"
-          ></i
-          ><a href="#">Continue with Facebook</a></button
-        ><br />
-        <button class="btn ggl">
-          <i
-            class="fab fa-google"
-            style="color: rgb(11, 241, 22); padding-right: 10px"
-          ></i
-          ><a href="#">Continue with Google</a>
-        </button>
-
+        <a href="/forget">Forgot your password?</a>
         <footer>
           <p>
             By continuing, you agree to Pinterest's
             <b><a href="/terms">Terms of Service</a>, <a href="/policy">Privacy policy</a>.</b>
           </p>
           <hr />
-          <p>Already have an account? <a href="/login">Login</a></p>
+          <p>Not have any account? <a href="/">Create new</a></p>
         </footer>
       </div>
     </div>
