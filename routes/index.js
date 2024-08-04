@@ -4,29 +4,26 @@ const userModel = require("./users");
 const passport = require("passport");
 
 const localStrategy = require("passport-local");
-passport.authenticate(new localStrategy(userModel.authenticate()));
+passport.use(new localStrategy(userModel.authenticate()));
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index')
+router.get("/", function (req, res, next) {
+  res.render("index");
 });
 
 /* User profile route */
-router.get('/profile', isLoggedIn, (req, res)=>{
-  res.send('profile page')
-})
+router.get("/profile", isLoggedIn, (req, res, next) => {
+  res.send("profile page");
+});
 
 /* User register route */
 router.post("/register", (req, res) => {
-  const { fullName, email, userName } = req.body;
-  const createdUser = userModel.crreate({
-    fullName,
-    email,
-    userName,
-  });
+  const { fullName, email, username } = req.body;
+  const userData = new userModel({ username, fullName, email });
 
-  userModel.register(createdUser, req.body.password).then(() => {
-    passport.authenticate("local")(req, res, () => {
+  userModel.register(userData, req.body.password)
+  .then(function () {
+    passport.authenticate("local")(req, res, function () {
       res.redirect("/profile");
     });
   });
@@ -43,9 +40,9 @@ router.post(
 );
 
 /* middleware to check if user loggedIn or not */
-function isLoggedIn(req, res, next){
-  if(req.isAuthenticated()) return next();
-  res.redirect('/');
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect("/");
 }
 
 module.exports = router;
