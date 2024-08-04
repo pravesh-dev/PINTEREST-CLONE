@@ -45,6 +45,14 @@ router.post(
   (req, res) => {}
 );
 
+/* User login route */
+router.get('/logout', (req, res)=>{
+  req.logout((err)=>{
+    if(err){ return next(err); }
+    res.redirect('/');
+  })
+})
+
 /* middleware to check if user loggedIn or not */
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
