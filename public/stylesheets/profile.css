@@ -64,4 +64,9 @@ body {
   .button:hover {
     background-color: #a30008;
   }
-  
+  .post_container{
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+    justify-content: start;
+  }
