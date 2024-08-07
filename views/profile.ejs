@@ -21,11 +21,15 @@
             alt="Profile Picture"
           />
         </div>
-        <h2 class="name">Pravesh Saini</h2>
-        <h3 class="username">@fastroware</h3>
+        <h2 class="name"><%= user.fullName%></h2>
+        <h3 class="username">@<%= user.username%></h3>
         <p class="tagline">Keep going.</p>
-        <p class="description">Masih belajar CSS dan HTML.</p>
-        <a href="#" class="button">Account Setting</a>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a href="/logout" class="button">Logout</a>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <input type="submit" value="upload">
+        </form>
       </div>
     </div>
     <div class="container">
