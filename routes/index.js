@@ -27,6 +27,7 @@ router.post('/upload', upload.single('file'), (req, res)=>{
     return res.status(400).send('no files were uploaded.');
   }
   res.send('File successfully uploaded!');
+  res.render('profile', {})
 })
 
 /* User profile route */
