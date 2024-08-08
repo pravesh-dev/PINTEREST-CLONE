@@ -23,12 +23,12 @@
         </div>
         <h2 class="name"><%= user.fullName%></h2>
         <h3 class="username">@<%= user.username%></h3>
-        <p class="tagline">Keep going.</p>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-        <a href="/logout" class="button">Logout</a>
-        <form action="/upload" method="post" enctype="multipart/form-data">
+        <p class="followers">0 following</p>
+        <div>
+          <a class="prof_btns" href="/share">Share</a>
+          <a class="prof_btns" href="/profile-edit">Edit profile</a>
+        </div>
+        <!-- <form action="/upload" method="post" enctype="multipart/form-data">
           <input
             type="text"
             name="fileCaption"
@@ -36,11 +36,14 @@
           />
           <input type="file" accept="image/*" name="file" />
           <input type="submit" value="upload" />
-        </form>
+        </form> -->
+        <a href="/create-pin" class="create_pin">Create Pin</a>
       </div>
     </div>
     <div class="container post_container">
-      <% user.posts.forEach((post)=>{ %>
+      <% if(user.posts.length < 1){%>
+      <p>Nothing to show...yet! Pins you create will live here.</p>
+      <%} else{ user.posts.forEach((post)=>{ %>
       <div class="card" style="width: 18rem">
         <img
           src="/images/uploads/<%= post.image %>"
@@ -51,7 +54,7 @@
           <h5 class="card-title"><%= post.postText%></h5>
         </div>
       </div>
-      <% }) %>
+      <% })}%>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

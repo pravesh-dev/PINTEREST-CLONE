@@ -1,72 +1,96 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #eeeeee;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .profileContainer {
-    width: 87%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .profileCard {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 20px;
-  }
-  
-  .profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .name {
-    font-size: 24px;
-    margin: 0;
-    text-transform: capitalize;
-  }
-  
-  .username {
-    font-size: 18px;
-    color: #777;
-    margin: 10px 0;
-  }
-  
-  .tagline,
-  .description {
-    color: #555;
-    margin: 10px 0;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #F30D19;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #a30008;
-  }
-  .post_container{
-    display: flex;
-    gap: 1rem;
-    align-items: start;
-    justify-content: start;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.profileContainer {
+  width: 87%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profileCard {
+  /* background-color: #fff; */
+  width: 100%;
+  height: max-content;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  position: relative;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.username {
+  font-size: 1rem;
+  color: #777;
+  margin: 0;
+}
+
+.followers {
+  color: #555;
+  margin: 0;
+  margin: 0 0 1rem 0;
+}
+.prof_btns {
+  font-size: 1rem;
+  color: black;
+  background: #e2e2e2;
+  padding: 1rem 1.2rem;
+  border-radius: 1.8rem;
+  text-decoration: none;
+}
+.create_pin{
+  font-size: 0.8rem;
+  color: #fff;
+  background: #fc0404;
+  padding: 0.5rem 1rem;
+  border-radius: 1.8rem;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+  text-decoration: none;
+}
+.create_pin:hover{
+  background: #c40101;
+}
+
+.post_container {
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  justify-content: start;
+}
