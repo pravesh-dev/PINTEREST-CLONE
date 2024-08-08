@@ -94,3 +94,37 @@ body{
   align-items: start;
   justify-content: start;
 }
+.post_card{
+  position: relative;
+  background: #e2e2e2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.post_card::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: #00000067;
+}
+.card-body{
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s;
+  display: none;
+}
+.card-title{
+  color: white !important;
+}
+.post_card:hover::before{
+  opacity: 1;
+}
+.post_card:hover .card-body{
+  display: block;
+}

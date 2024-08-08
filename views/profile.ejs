@@ -10,6 +10,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/stylesheets/profile.css" />
   </head>
   <body>
@@ -28,15 +32,6 @@
           <a class="prof_btns" href="/share">Share</a>
           <a class="prof_btns" href="/profile-edit">Edit profile</a>
         </div>
-        <!-- <form action="/upload" method="post" enctype="multipart/form-data">
-          <input
-            type="text"
-            name="fileCaption"
-            placeholder="Write caption here"
-          />
-          <input type="file" accept="image/*" name="file" />
-          <input type="submit" value="upload" />
-        </form> -->
         <a href="/create-pin" class="create_pin">Create Pin</a>
       </div>
     </div>
@@ -44,7 +39,7 @@
       <% if(user.posts.length < 1){%>
       <p>Nothing to show...yet! Pins you create will live here.</p>
       <%} else{ user.posts.forEach((post)=>{ %>
-      <div class="card" style="width: 18rem">
+      <div class="card post_card" style="width: 18rem">
         <img
           src="/images/uploads/<%= post.image %>"
           class="card-img-top"
@@ -53,6 +48,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= post.postText%></h5>
         </div>
+        <span><i class="ri-pencil-fill"></i></span>
       </div>
       <% })}%>
     </div>

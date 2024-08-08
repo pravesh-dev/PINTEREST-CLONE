@@ -20,7 +20,6 @@ header {
   width: 70%;
   height: 70vh;
   margin: 0 auto;
-  border: 1px solid black;
   display: flex;
 }
 .left {
@@ -64,7 +63,6 @@ header {
 }
 .right {
   width: 50%;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
