@@ -16,12 +16,7 @@
     >
       <div class="left">
         <div>
-          <!-- <input
-            type="text"
-            name="fileCaption"
-            placeholder="Write caption here"
-          /> -->
-          <input type="file" id="fileInput" accept="image/*" name="file" />
+          <input type="file" id="fileInput" accept="image/*" name="file" required />
           <label id="fileLabel" for="fileInput">
             <div class="image_box">Click here to choose a file</div>
           </label>
@@ -32,11 +27,11 @@
       </div>
       <div class="right">
         <label for="title">Title</label>
-        <input type="text" id="title" name="title" placeholder="Add a title">
+        <input type="text" id="title" name="fileCaption" placeholder="Add a title" required>
         <label for="title">Description</label>
-        <textarea id="description" name="description" placeholder="Add a detailed description"></textarea>
+        <textarea id="description" name="description" placeholder="Add a detailed description" required></textarea>
         <label for="title">Link</label>
-        <input type="text" id="link" name="link" placeholder="Add a link">
+        <input type="text" id="link" name="link" placeholder="Add a link" required>
         <button type="submit">Create Pin</button>
       </div>
     </form>
