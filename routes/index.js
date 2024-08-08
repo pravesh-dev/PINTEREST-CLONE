@@ -51,6 +51,11 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
   res.render("profile", {user});
 });
 
+/* Create pin route */
+router.get('/create-pin', (req, res)=>{
+  res.render('createPin')
+})
+
 /* User register route */
 router.post("/register", (req, res) => {
   const { fullName, email, username } = req.body;

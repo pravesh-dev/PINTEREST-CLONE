@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create new pin</title>
+    <link rel="stylesheet" href="/stylesheets/createPin.css" />
+  </head>
+  <body>
+    <header>Create Pin</header>
+    <div class="container"></div>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="text" name="fileCaption" placeholder="Write caption here" />
+      <input type="file" accept="image/*" name="file" />
+      <input type="submit" value="upload" />
+    </form>
+  </body>
+</html>
