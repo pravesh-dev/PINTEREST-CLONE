@@ -96,7 +96,7 @@ body{
 }
 .post_card{
   position: relative;
-  background: #e2e2e2;
+  background: #e8e8e8;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -115,7 +115,7 @@ body{
   top: 0%;
   left: 0;
   width: 100%;
-  text-align: center;
+  padding-left: 1rem;
   transition: all 0.3s;
   display: none;
 }
@@ -127,4 +127,21 @@ body{
 }
 .post_card:hover .card-body{
   display: block;
+}
+.delete_pin{
+  color: #fc0404;
+  background: #fc04047e;
+  border: 1px solid #fc0404;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.post_card:hover .delete_pin{
+  display: flex;
 }
