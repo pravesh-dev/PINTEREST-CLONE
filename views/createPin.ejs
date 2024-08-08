@@ -8,11 +8,44 @@
   </head>
   <body>
     <header>Create Pin</header>
-    <div class="container"></div>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="text" name="fileCaption" placeholder="Write caption here" />
-      <input type="file" accept="image/*" name="file" />
-      <input type="submit" value="upload" />
+    <form
+      action="/upload"
+      method="post"
+      enctype="multipart/form-data"
+      class="container"
+    >
+      <div class="left">
+        <div>
+          <!-- <input
+            type="text"
+            name="fileCaption"
+            placeholder="Write caption here"
+          /> -->
+          <input type="file" id="fileInput" accept="image/*" name="file" />
+          <label id="fileLabel" for="fileInput">
+            <div class="image_box">Click here to choose a file</div>
+          </label>
+        </div>
+        <div id="prevImgBox">
+            <img id="preview-image" src="" alt="Selected image preview" />
+        </div>
+      </div>
+      <div class="right"></div>
     </form>
   </body>
+  <script>
+    const fileInput = document.querySelector("#fileInput");
+    const img = document.querySelector("img");
+    fileInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+        document.querySelector('label').style.display = 'none'
+    }
+    });
+  </script>
 </html>
