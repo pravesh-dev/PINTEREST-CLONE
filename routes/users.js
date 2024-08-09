@@ -6,7 +6,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/pinterestClone");
 const userSchema = mongoose.Schema({
   username: {
     type: String,
-    require: true,
+    required: true,
     unique: true,
   },
   profileImage: {
@@ -14,11 +14,8 @@ const userSchema = mongoose.Schema({
   },
   email: {
     type: String,
-    require: true,
-    unique: true
-  },
-  password: {
-    type: String,
+    required: true,
+    unique: true,
   },
   posts: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -26,13 +23,11 @@ const userSchema = mongoose.Schema({
   }], 
   fullName: {
     type: String,
-    require: true
+    required: true,
   },
-  dp: {
-    type: String
-  },
-})
+});
 
+// Passport-local-mongoose will add a 'username' and 'hash' and 'salt' to the schema
 userSchema.plugin(plm);
 
 module.exports = mongoose.model('User', userSchema);
