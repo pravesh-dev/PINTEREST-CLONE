@@ -20,14 +20,19 @@
     <div class="profileContainer">
       <div class="profileCard">
         <div class="profile-picture">
-          <img
+          <!-- <img
             src="https://images.unsplash.com/photo-1508364654111-570ff4726d27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Profile Picture"
+          /> -->
+          <img
+            src="<%= user.profileImage %>"
             alt="Profile Picture"
           />
           <!-- <span class="profile_edit_btn"><i class="ri-pencil-fill"></i></span> -->
-          <form action="/profile-image-upload" method="post">
+          <form action="/profile-image-upload" method="post" enctype="multipart/form-data">
             <input type="file" id="fileInput" accept="image/*" name="file" required />
           <label id="fileLabel" class="profile_edit_btn" for="fileInput"><i class="ri-pencil-fill"></i></label>
+          <button type="submit">submit</button>
           </form>
         </div>
         <h2 class="name"><%= user.fullName%></h2>
@@ -63,19 +68,4 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
-  <script>
-    const fileInput = document.querySelector("#fileInput");
-    const img = document.querySelector("img");
-    fileInput.addEventListener("change", (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (event) {
-          img.src = event.target.result;
-        };
-        reader.readAsDataURL(file);
-        document.querySelector('label').style.display = 'none'
-    }
-    });
-  </script>
 </html>

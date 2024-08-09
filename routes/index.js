@@ -49,6 +49,7 @@ router.post('/profile-image-upload', isLoggedIn, upload.single('file'), async (r
   const user = await userModel.findOne({
     username: req.session.passport.user
   });
+  console.log(req.file.filename)
   user.profileImage = req.file.filename;
   await user.save();
   res.redirect('/profile');
@@ -60,7 +61,6 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
     username: req.session.passport.user
   })
   .populate('posts');
-  console.log(user)
   res.render("profile", {user});
 });
 
