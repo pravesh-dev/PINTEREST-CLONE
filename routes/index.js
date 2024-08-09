@@ -41,6 +41,19 @@ router.post('/upload', isLoggedIn, upload.single('file'), async (req, res)=>{
   res.redirect('/profile')
 })
 
+/* route for upload user profile image */
+router.post('/profile-image-upload', isLoggedIn, upload.single('file'), async (req, res)=>{
+  if(!req.file){
+    return res.status(400).send('no files were uploaded.');
+  }
+  const user = await userModel.findOne({
+    username: req.session.passport.user
+  });
+  user.profileImage = req.file.filename;
+  await user.save();
+  res.redirect('/profile');
+})
+
 /* User profile route */
 router.get("/profile", isLoggedIn, async (req, res, next) => {
   const user = await userModel.findOne({
