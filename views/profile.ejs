@@ -25,12 +25,12 @@
             alt="Profile Picture"
           /> -->
           <img
-            src="<%= user.profileImage %>"
+            src="/images/uploads/<%= user.profileImage %>"
             alt="Profile Picture"
           />
           <!-- <span class="profile_edit_btn"><i class="ri-pencil-fill"></i></span> -->
           <form action="/profile-image-upload" method="post" enctype="multipart/form-data">
-            <input type="file" id="fileInput" accept="image/*" name="file" required />
+            <input type="file" id="fileInput" accept="image/*" name="prof_img" required />
           <label id="fileLabel" class="profile_edit_btn" for="fileInput"><i class="ri-pencil-fill"></i></label>
           <button type="submit">submit</button>
           </form>
@@ -68,4 +68,14 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
+  <script>
+    const fileInput = document.querySelector('#fileInput');
+    const form = document.querySelector('form');
+    fileInput.addEventListener('change', (e)=>{
+      console.log(e.target.files)
+    })
+    form.onsubmit = ()=>{
+      console.log('data submitted')
+    }
+  </script>
 </html>
