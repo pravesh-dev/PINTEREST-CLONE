@@ -140,6 +140,7 @@ body{
 }
 .card-title{
   color: white !important;
+  text-transform: capitalize;
 }
 .post_card:hover::before{
   opacity: 1;
