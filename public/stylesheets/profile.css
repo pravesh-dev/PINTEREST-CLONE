@@ -170,8 +170,7 @@ body{
   display: flex;
 }
 .btns_box{
-  width: 14rem;
-  /* display: flex; */
+  width: 12.5rem;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.2rem;
@@ -194,4 +193,5 @@ body{
 .confirm_btn{
   color: #fff;
   background: #fc0404;
+  text-decoration: none;
 }
