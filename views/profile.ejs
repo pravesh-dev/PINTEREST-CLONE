@@ -73,7 +73,7 @@
     const fileInput = document.querySelector('#fileInput');
     const form = document.querySelector('form');
     fileInput.addEventListener('change', (e)=>{
-      console.log(e.target.files)
+      form.submit();
     })
     form.onsubmit = ()=>{
       console.log('data submitted')
