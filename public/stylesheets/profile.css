@@ -142,6 +142,9 @@ body{
   color: white !important;
   text-transform: capitalize;
 }
+.post_card{
+  position: relative;
+}
 .post_card:hover::before{
   opacity: 1;
 }
@@ -161,7 +164,34 @@ body{
   justify-content: center;
   align-items: center;
   display: none;
+  cursor: pointer;
 }
 .post_card:hover .delete_pin{
   display: flex;
+}
+#btns_box{
+  width: 14rem;
+  /* display: flex; */
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+#cancel_btn, #confirm_btn{
+  font-size: 1rem;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 1.4rem;
+  background: none;
+  cursor: pointer;
+}
+#cancel_btn{
+  color: #fff;
+}
+#confirm_btn{
+  color: #fff;
+  background: #fc0404;
 }

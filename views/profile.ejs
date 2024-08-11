@@ -21,19 +21,28 @@
       <div class="profileCard">
         <div class="profile-picture">
           <% if(!user.profileImage){ %>
-            <img
-              src="/images/profileDefault.png"
-              alt="Profile Picture"
-            />
+          <img src="/images/profileDefault.png" alt="Profile Picture" />
           <% }else{ %>
-            <img
-              src="/images/uploads/<%= user.profileImage %>"
-              alt="Profile Picture"
-            />
+          <img
+            src="/images/uploads/<%= user.profileImage %>"
+            alt="Profile Picture"
+          />
           <% } %>
-          <form action="/profile-image-upload" method="post" enctype="multipart/form-data">
-            <input type="file" id="fileInput" accept="image/*" name="prof_img" required />
-          <label id="fileLabel" class="profile_edit_btn" for="fileInput"><i class="ri-pencil-fill"></i></label>
+          <form
+            action="/profile-image-upload"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              name="prof_img"
+              required
+            />
+            <label id="fileLabel" class="profile_edit_btn" for="fileInput"
+              ><i class="ri-pencil-fill"></i
+            ></label>
           </form>
         </div>
         <h2 class="name"><%= user.fullName%></h2>
@@ -60,20 +69,38 @@
           <h5 class="card-title"><%= post.postText%></h5>
         </div>
         <span class="delete_pin"><i class="ri-delete-bin-6-line"></i></span>
+        <div id="btns_box">
+          <button id="cancel_btn">Cancel</button>
+          <button id="confirm_btn">Confirm</button>
+        </div>
       </div>
       <% })}%>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const fileInput = document.querySelector("#fileInput");
+      const form = document.querySelector("form");
+      fileInput.addEventListener("change", (e) => {
+        form.submit();
+      });
+
+      // const deletePin = document.querySelector('.delete_pin');
+      // const btnsBox = document.querySelector('.btns_box');
+      // const cancelBtn = document.querySelector('.cancel_btn');
+      // const confirmBtn = document.querySelector('.confirm_btn');
+
+      // deletePin.addEventListener('click', ()=>{
+      //   btnsBox.style.display = 'flex';
+      //   deletePin.style.display = 'none';
+      // })
+      // cancelBtn.addEventListener('click', ()=>{
+      //   btnsBox.style.display = 'none';
+      //   deletePin.style.display = 'flex';
+      // })
+    </script>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    const fileInput = document.querySelector('#fileInput');
-    const form = document.querySelector('form');
-    fileInput.addEventListener('change', (e)=>{
-      form.submit();
-    })
-  </script>
 </html>
