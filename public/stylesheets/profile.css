@@ -169,7 +169,7 @@ body{
 .post_card:hover .delete_pin{
   display: flex;
 }
-#btns_box{
+.btns_box{
   width: 14rem;
   /* display: flex; */
   justify-content: center;
@@ -180,7 +180,7 @@ body{
   right: 0;
   display: none;
 }
-#cancel_btn, #confirm_btn{
+.cancel_btn, .confirm_btn{
   font-size: 1rem;
   border: none;
   padding: 0.4rem 1.2rem;
@@ -188,10 +188,10 @@ body{
   background: none;
   cursor: pointer;
 }
-#cancel_btn{
+.cancel_btn{
   color: #fff;
 }
-#confirm_btn{
+.confirm_btn{
   color: #fff;
   background: #fc0404;
 }

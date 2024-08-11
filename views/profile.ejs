@@ -69,9 +69,10 @@
           <h5 class="card-title"><%= post.postText%></h5>
         </div>
         <span class="delete_pin"><i class="ri-delete-bin-6-line"></i></span>
-        <div id="btns_box">
-          <button id="cancel_btn">Cancel</button>
-          <button id="confirm_btn">Confirm</button>
+        <div class="btns_box">
+          <%= post.postText%>
+          <button class="cancel_btn">Cancel</button>
+          <button class="confirm_btn">Confirm</button>
         </div>
       </div>
       <% })}%>
@@ -88,19 +89,22 @@
         form.submit();
       });
 
-      // const deletePin = document.querySelector('.delete_pin');
-      // const btnsBox = document.querySelector('.btns_box');
-      // const cancelBtn = document.querySelector('.cancel_btn');
-      // const confirmBtn = document.querySelector('.confirm_btn');
+      const postCards = document.querySelectorAll('.post_card');
+      const deletePins = document.querySelectorAll('.delete_pin');
+      const cancelBtns = document.querySelectorAll('.cancel_btn');
 
-      // deletePin.addEventListener('click', ()=>{
-      //   btnsBox.style.display = 'flex';
-      //   deletePin.style.display = 'none';
-      // })
-      // cancelBtn.addEventListener('click', ()=>{
-      //   btnsBox.style.display = 'none';
-      //   deletePin.style.display = 'flex';
-      // })
+      deletePins.forEach((deletePin)=>{
+        deletePin.addEventListener('click', ()=>{
+          deletePin.nextElementSibling.style.display = 'flex';
+          // deletePin.classList.remove('delete_pin_active');
+        })
+      })
+      cancelBtns.forEach((cancelBtn)=>{
+        cancelBtn.addEventListener('click', ()=>{
+          cancelBtn.parentElement.style.display = 'none';
+          // cancelBtn.parentElement.previousElementSibling.classList.remove('delete_pin_active');
+        })
+      })
     </script>
   </body>
 </html>
