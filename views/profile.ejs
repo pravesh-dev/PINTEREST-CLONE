@@ -21,15 +21,10 @@
       <div class="profileCard">
         <!-- <%= user.profileImage %> -->
         <div class="profile-picture">
-          <!-- <img
-            src="https://images.unsplash.com/photo-1508364654111-570ff4726d27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Profile Picture"
-          /> -->
           <img
             src="/images/uploads/<%= user.profileImage %>"
             alt="Profile Picture"
           />
-          <!-- <span class="profile_edit_btn"><i class="ri-pencil-fill"></i></span> -->
           <form action="/profile-image-upload" method="post" enctype="multipart/form-data">
             <input type="file" id="fileInput" accept="image/*" name="prof_img" required />
           <label id="fileLabel" class="profile_edit_btn" for="fileInput"><i class="ri-pencil-fill"></i></label>
