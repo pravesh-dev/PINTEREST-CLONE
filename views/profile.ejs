@@ -33,7 +33,6 @@
           <form action="/profile-image-upload" method="post" enctype="multipart/form-data">
             <input type="file" id="fileInput" accept="image/*" name="prof_img" required />
           <label id="fileLabel" class="profile_edit_btn" for="fileInput"><i class="ri-pencil-fill"></i></label>
-          <button type="submit">submit</button>
           </form>
         </div>
         <h2 class="name"><%= user.fullName%></h2>
@@ -75,8 +74,5 @@
     fileInput.addEventListener('change', (e)=>{
       form.submit();
     })
-    form.onsubmit = ()=>{
-      console.log('data submitted')
-    }
   </script>
 </html>
