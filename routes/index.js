@@ -100,7 +100,6 @@ router.post(
   (req, res) => {}
 );
 
-/* User login route */
 /* User logout route */
 router.get("/logout", (req, res, next) => {
   req.logout((err) => {

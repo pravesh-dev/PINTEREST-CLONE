@@ -19,12 +19,18 @@
   <body>
     <div class="profileContainer">
       <div class="profileCard">
-        <!-- <%= user.profileImage %> -->
         <div class="profile-picture">
-          <img
-            src="/images/uploads/<%= user.profileImage %>"
-            alt="Profile Picture"
-          />
+          <% if(!user.profileImage){ %>
+            <img
+              src="/images/profileDefault.png"
+              alt="Profile Picture"
+            />
+          <% }else{ %>
+            <img
+              src="/images/uploads/<%= user.profileImage %>"
+              alt="Profile Picture"
+            />
+          <% } %>
           <form action="/profile-image-upload" method="post" enctype="multipart/form-data">
             <input type="file" id="fileInput" accept="image/*" name="prof_img" required />
           <label id="fileLabel" class="profile_edit_btn" for="fileInput"><i class="ri-pencil-fill"></i></label>
