@@ -73,6 +73,8 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
 router.get("/create-pin", (req, res) => {
   res.render("createPin");
 });
+
+/* Delete post route */
 router.get('/delete-pin/:postId', async (req, res)=>{
   const findPost = await postModel.findOne({_id: req.params.postId}).populate('user');
   const user = await userModel.findOne({_id: findPost.user._id});
@@ -82,6 +84,7 @@ router.get('/delete-pin/:postId', async (req, res)=>{
   await user.save();
   res.redirect('/profile');
 })
+
 /* User register route */
 router.post("/register", (req, res) => {
   const userData = new userModel({
